@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BadKing } from "../art/BadKing";
 import { getFaceName, SURGERY_OPTIONS } from "../data/gameData";
+import { playSfx } from "../utils/playSfx";
 import styles from "./EndingScreen.module.css";
 
 const ASCEND_STEPS = [
@@ -15,12 +16,20 @@ export default function EndingScreen({ state, onRestart }) {
   const { name, face, ending } = state;
   const [step, setStep]       = useState(0);
   const [showInfo, setShowInfo] = useState(false);
+  const playedKingSfx = useRef(false);
 
   useEffect(() => {
     const timers = ASCEND_STEPS.map((s, i) => setTimeout(() => setStep(i + 1), s.delay));
     const t = setTimeout(() => setShowInfo(true), 7200);
     return () => { timers.forEach(clearTimeout); clearTimeout(t); };
   }, []);
+
+  // 「王」 큰 글자가 나올 때(왕 즉위 연출 정점) 엉뚱 효과음 1회
+  useEffect(() => {
+    if (step !== 4 || playedKingSfx.current) return;
+    playedKingSfx.current = true;
+    playSfx("king", 0.92);
+  }, [step]);
 
   const phase = step;
   const kingFace = face ?? { eyes: "normal", nose: "normal", mouth: "angry" };

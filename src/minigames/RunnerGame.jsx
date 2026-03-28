@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { BadKing } from "../art/BadKing";
+import { playSfx } from "../utils/playSfx";
 import styles from "./RunnerGame.module.css";
 
 // ── 게임 상수
@@ -147,6 +148,7 @@ export default function RunnerGame({ face, onComplete }) {
       }
 
       if (gotHit) {
+        playSfx("hit");
         s.lives--;
         s.flashTimer = 60;
         if (s.lives <= 0) {
