@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:     #ffffff;
+  --bg2:    #f0f0f0;
+  --border: #000000;
+  --red:    #cc0000;
+  --blue:   #0000cc;
+  --gold:   #cc8800;
+  --text:   #111111;
+  --muted:  #555555;
+  --green:  #008800;
+  --px:     4px;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Press Start 2P', monospace;
+  background: #ffffff;
+  color: #111111;
+  min-height: 100vh;
+  image-rendering: pixelated;
+}
+
+button {
+  font-family: 'Press Start 2P', monospace;
+  cursor: pointer;
+}
+
+input {
+  font-family: 'Press Start 2P', monospace;
+}
+
+/* 픽셀 스크롤바 */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #fff; }
+::-webkit-scrollbar-thumb { background: #000; }
+
+/* 화면 전환 */
+.screen-enter {
+  animation: pixelIn 0.15s steps(3) both;
+}
+
+@keyframes pixelIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}

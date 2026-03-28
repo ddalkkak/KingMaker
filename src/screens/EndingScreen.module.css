@@ -1,0 +1,214 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 32px 16px 60px;
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+  z-index: 1;
+}
+
+.grade {
+  font-size: 3rem;
+  line-height: 1;
+  animation: gradeIn 0.3s steps(4) both;
+  text-shadow: 4px 4px 0 #cccccc, 6px 6px 0 #000;
+}
+
+@keyframes gradeIn {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.characterArea {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  image-rendering: pixelated;
+}
+
+.kingFigure {
+  position: relative;
+}
+
+.glowing {
+  animation: pixelPulse 0.4s steps(2) infinite alternate;
+}
+
+@keyframes pixelPulse {
+  from { filter: drop-shadow(0 0 4px #cc8800); }
+  to   { filter: drop-shadow(0 0 16px #cc8800) drop-shadow(4px 0 8px #cc2200); }
+}
+
+.glowRing {
+  position: absolute;
+  inset: -16px;
+  border: 4px solid #000000;
+  animation: expandRing 1s steps(4) infinite;
+}
+
+@keyframes expandRing {
+  0%   { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.transforming {
+  animation: pixelExplode 1.2s steps(6) forwards;
+}
+
+@keyframes pixelExplode {
+  0%   { transform: scale(1); opacity: 1; }
+  33%  { transform: scale(1.2); filter: invert(1); }
+  66%  { transform: scale(0.5); opacity: 0.5; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+.wangChar {
+  font-size: 8rem;
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 900;
+  line-height: 1;
+  color: #111111;
+  text-shadow: 6px 6px 0 #cccccc;
+  animation: wangAppear 0.4s steps(4) both;
+  position: relative;
+}
+
+@keyframes wangAppear {
+  from { transform: scale(4); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.ascending {
+  animation: wangAscend 2.5s steps(16) forwards;
+}
+
+@keyframes wangAscend {
+  0%   { transform: translateY(0) scale(1); opacity: 1; }
+  50%  { transform: translateY(-80px) scale(1.1); opacity: 1; }
+  80%  { transform: translateY(-180px) scale(0.8); opacity: 0.6; }
+  100% { transform: translateY(-320px) scale(0.3); opacity: 0; }
+}
+
+.ascendTrail {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  background: linear-gradient(to bottom, #000, transparent);
+  animation: trailGrow 2.5s steps(8) forwards;
+}
+
+@keyframes trailGrow {
+  0%   { height: 0; opacity: 0; }
+  20%  { height: 40px; opacity: 1; }
+  100% { height: 160px; opacity: 0; }
+}
+
+.stepMsg {
+  font-size: 0.75rem;
+  color: #111111;
+  letter-spacing: 0.1em;
+  text-align: center;
+  animation: msgBlink 0.3s steps(2) both;
+  min-height: 1.8em;
+}
+
+@keyframes msgBlink {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.endingInfo {
+  width: 100%;
+  text-align: center;
+  border-top: 4px solid #000000;
+  padding-top: 24px;
+  margin-top: 8px;
+}
+
+.endingTitle {
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+  letter-spacing: 0.06em;
+  line-height: 2;
+  color: #111111;
+}
+
+.endingDesc {
+  color: #555555;
+  line-height: 2.6;
+  font-size: 0.6rem;
+  margin-bottom: 24px;
+  white-space: pre-line;
+  letter-spacing: 0.04em;
+}
+
+.faceRecord {
+  background: #f0f0f0;
+  border: 3px solid #000000;
+  box-shadow: 3px 3px 0 0 #000;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.faceRecordTitle {
+  font-size: 0.6rem;
+  color: #111111;
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+}
+
+.faceItems {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.faceItems span {
+  font-size: 0.5rem;
+  color: #111111;
+  background: #ffffff;
+  border: 2px solid #000000;
+  padding: 5px 10px;
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.restartBtn {
+  background: #f0f0f0;
+  border: 3px solid #000000;
+  color: #111111;
+  padding: 14px 32px;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  box-shadow: 3px 3px 0 0 #000;
+  cursor: pointer;
+}
+
+.restartBtn:hover {
+  border-color: #cc2200;
+  background: #ffffff;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 0 #000;
+}
+
+.restartBtn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 0 #000;
+}

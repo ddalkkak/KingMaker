@@ -1,0 +1,179 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 720px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+.header {
+  background: #f0f0f0;
+  border-bottom: 4px solid #000000;
+  padding: 14px 16px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 0 0 #000;
+}
+
+.stageRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.stageBadge {
+  background: #cc2200;
+  color: #ffffff;
+  font-size: 0.6rem;
+  padding: 5px 10px;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+
+.stageTitle {
+  color: #111111;
+  font-size: 0.65rem;
+  flex: 1;
+  letter-spacing: 0.05em;
+}
+
+.charName {
+  font-size: 0.6rem;
+  color: #555555;
+  letter-spacing: 0.08em;
+}
+
+.progressBar {
+  height: 6px;
+  background: #cccccc;
+  border: 2px solid #000;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #cc2200;
+  transition: width 0.2s steps(8);
+}
+
+.body {
+  flex: 1;
+  padding: 20px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eventRow, .resultRow {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.charBox {
+  flex-shrink: 0;
+  image-rendering: pixelated;
+}
+
+.eventBox {
+  flex: 1;
+  background: #f0f0f0;
+  border: 4px solid #000000;
+  box-shadow: 4px 4px 0 0 #000;
+  padding: 18px 16px;
+  min-height: 110px;
+}
+
+.eventText {
+  line-height: 2.4;
+  font-size: 0.7rem;
+  color: #111111;
+  white-space: pre-line;
+  letter-spacing: 0.04em;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.choiceBtn {
+  background: #ffffff;
+  border: 3px solid #000000;
+  color: #111111;
+  padding: 14px 16px;
+  text-align: left;
+  box-shadow: 3px 3px 0 0 #000;
+  cursor: pointer;
+  transition: none;
+}
+
+.choiceBtn:hover {
+  background: #f0f0f0;
+  border-color: #cc2200;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 0 #000;
+}
+
+.choiceBtn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 0 #000;
+}
+
+.choiceText {
+  font-size: 0.7rem;
+  line-height: 2;
+  letter-spacing: 0.03em;
+}
+
+.resultCard {
+  flex: 1;
+  background: #f0f0f0;
+  border: 4px solid #cc2200;
+  box-shadow: 4px 4px 0 0 #000;
+  padding: 18px 16px;
+}
+
+.resultLabel {
+  font-size: 0.6rem;
+  color: #cc2200;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+
+.resultText {
+  font-size: 0.7rem;
+  line-height: 2.4;
+  color: #111111;
+  white-space: pre-line;
+  letter-spacing: 0.03em;
+}
+
+.nextBtn {
+  align-self: flex-end;
+  background: #ffffff;
+  border: 3px solid #000000;
+  color: #111111;
+  padding: 12px 22px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  box-shadow: 3px 3px 0 0 #000;
+  cursor: pointer;
+}
+
+.nextBtn:hover {
+  background: #f0f0f0;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 0 #000;
+}
+
+.nextBtn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 0 #000;
+}
